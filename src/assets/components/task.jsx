@@ -9,7 +9,10 @@ export function Task(props) {
           <button className="bg-slate-400 text-left w-full text-white p-3 rounded-md">
             {tarefa.nome}
           </button>
-          <button className="p-3 bg-slate-400 rounded-md text-white">
+          <button
+            className="p-3 bg-slate-400 rounded-md text-white"
+            onClick={() => props.funcao(tarefa.id)}
+          >
             <TrashIcon />
           </button>
           <button className="p-3 bg-slate-400 rounded-md text-white">

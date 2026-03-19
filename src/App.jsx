@@ -30,13 +30,18 @@ function App() {
     },
   ]);
 
+  const removerItem = (idTarefa) => {
+    const novaLista = tarefas.filter((tarefa) => tarefa.id !== idTarefa);
+    setTarefas(novaLista);
+  };
+
   return (
     <div className="flex justify-center bg-slate-300 h-screen w-screen p-7">
       <div className="w=[500px]">
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
-        <Task tarefas={tarefas} />
+        <Task tarefas={tarefas} funcao={removerItem} />
       </div>
     </div>
   );
