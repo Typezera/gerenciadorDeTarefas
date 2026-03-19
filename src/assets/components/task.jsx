@@ -1,3 +1,5 @@
+import { ChevronRightIcon, TrashIcon } from "lucide-react";
+
 export function Task(props) {
   console.log(props);
   return (
@@ -7,7 +9,12 @@ export function Task(props) {
           <button className="bg-slate-400 text-left w-full text-white p-3 rounded-md">
             {tarefa.nome}
           </button>
-          <button>teste</button>
+          <button className="p-3 bg-slate-400 rounded-md text-white">
+            <TrashIcon />
+          </button>
+          <button className="p-3 bg-slate-400 rounded-md text-white">
+            <ChevronRightIcon />
+          </button>
         </li>
       ))}
     </ul>
