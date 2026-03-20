@@ -36,13 +36,24 @@ function App() {
     setTarefas(novaLista);
   };
 
+  const adicionarTarefa = (nome, descricao) => {
+    const novaTarefa = {
+      id: Math.random(),
+      nome,
+      descricao,
+      concluida: false,
+    };
+
+    setTarefas([...tarefas, novaTarefa]);
+  };
+
   return (
     <div className="flex justify-center bg-neutral-900 h-screen w-screen p-7">
       <div className="w=[500px]">
-        <h1 className="text-3xl text-slate-100 font-bold text-center">
+        <h1 className="text-3xl mb-2 text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
-        <Addtask />
+        <Addtask adicionarTarefa={adicionarTarefa} />
         <Task tarefas={tarefas} funcao={removerItem} />
       </div>
     </div>
