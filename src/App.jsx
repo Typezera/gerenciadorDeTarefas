@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Task } from "./assets/components/task";
 import "./index.css";
+import { Addtask } from "./assets/components/addTask";
 
 function App() {
   const [tarefas, setTarefas] = useState([
@@ -36,11 +37,12 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center bg-slate-300 h-screen w-screen p-7">
+    <div className="flex justify-center bg-neutral-900 h-screen w-screen p-7">
       <div className="w=[500px]">
         <h1 className="text-3xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
+        <Addtask />
         <Task tarefas={tarefas} funcao={removerItem} />
       </div>
     </div>
